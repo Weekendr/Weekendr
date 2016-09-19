@@ -25,7 +25,6 @@ class LandingApp extends React.Component {
 
 	handleNumTravelers(){
 		this.setState({numTravelers: event.target.value});
-
 	}
 
 	handleModeTransport(){
@@ -36,7 +35,7 @@ class LandingApp extends React.Component {
 		this.setState({constraints: event.target.value});
 	}
 
-	handleQuestionaire(){
+	handleQuestionnaire(){
 		this.setState({page: 'questionnaire'});
 	}
 
