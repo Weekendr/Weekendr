@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
-import LandingApp from './component/landingApp.js';
+import LandingApp from './components/landingApp.js';
 
 
 
