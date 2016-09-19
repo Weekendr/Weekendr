@@ -16,7 +16,7 @@ class LandingApp extends React.Component {
 		this.handleNumTravelers = this.handleNumTravelers.bind(this);
 		this.handleModeTransport = this.handleModeTransport.bind(this);
 		this.handleConstraints = this.handleConstraints.bind(this);
-		this.handleQuestionaire = this.handleQuestionaire.bind(this);
+		this.handleQuestionnaire = this.handleQuestionnaire.bind(this);
 	}
 
 	handleBudget(){
@@ -37,7 +37,7 @@ class LandingApp extends React.Component {
 	}
 
 	handleQuestionaire(){
-		this.setState({page: 'questionaire'});
+		this.setState({page: 'questionnaire'});
 	}
 
 	render(){
