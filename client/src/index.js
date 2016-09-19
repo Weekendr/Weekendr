@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { Router, browserHistory } from 'react-router';
-
+import LandingApp from './components/landingApp.js';
 import routes from './routes';
-import Landing from './components/Landing';
 import  reducers  from './reducers';
+import { Router, Route, browserHistory } from 'react-router';
 
 ReactDOM.render(
-  <Provider store={createStore(reducers)}>
-    <Landing />
-    <Router history={browserHistory} routes={routes} />
-  </Provider>
-  , document.querySelector('.container'));
+	<Router history={browserHistory}>
+		<Route path="/" component={LandingApp}/>
+	</Router>
+  , document.getElementById("app"));

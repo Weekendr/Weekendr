@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import Landing from './components/Landing';
+import LandingApp from './components/landingApp';
 
 export default (
-	<Route path="/" component={Landing}>
+	<Route path="/" component={LandingApp}>
 
 	</Route>
 	)
