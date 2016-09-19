@@ -5,7 +5,7 @@ class LandingApp extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			page: 'firstQuestions'
+			page: 'firstQuestions',
 			budget: 400,
 			numTravelers : 1,
 			modeTransport: null,
