@@ -1,7 +1,7 @@
 // var request = require("request");
 import { LAT_LONG } from './actionTypes';
 
-export default function getLatLng() {
+export function getLatLng() {
   return (dispatch) => {
     var lat = 0;
 	  var long = 0;

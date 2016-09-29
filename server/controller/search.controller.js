@@ -1,7 +1,5 @@
 const searchModel = require('../model/search.model');
 
-console.log('we are inside searchController');
-
 function getCity(req, res) {
   // console.log('*****req.body inside searchController inside getCity is: ', req.body);
   searchModel.getCity(req.body)

@@ -1,6 +1,6 @@
 /node_modules
 .env
 /client/build
+/server/model/categoryParse.js
 npm-debug.log
 .idea/
-

@@ -1,18 +1,17 @@
 import axios from 'axios';
 import { SELECTED_CITY } from './actionTypes';
 
-
-export function sendSelectedCity(props){
-  console.log('inside sendSelectedCity inside TripAction city is: ', props);
+export function sendSelectedCity(props, quizAnswers) {
   const options = {
     name: props.cityName,
     id: props.id,
     lat: props.lat,
     lng: props.lng,
-    countryCode: props.countrycode
+    countryCode: props.countrycode,
+    answers: quizAnswers,
   };
   return (dispatch) => {
-    axios.post('/api/city', options)
+    axios.post('/api/receive/receiveCity', options)
     .then((data) => {
       dispatch({
         type: SELECTED_CITY,
@@ -22,27 +21,5 @@ export function sendSelectedCity(props){
     .catch(function(err) {
       console.log('error inside sendSelectedCity inside TripAction', err)
     });
-  };
-}
-
-
-export function postQuestionListInput(props) {
-  const options = {
-    answers: props.quizAnswers,
-    coordinates: props.coordinates,
-    userInputForm: props.userInputForm
-  };
-
-  return (dispatch) => {
-    axios.post('/api/search/getCity', options)
-      .then((data) => {
-        dispatch({
-          type: RECEIVED_DATA,
-          payload: data
-        });
-      })
-      .catch((err) => {
-        console.log('error inside postQuestionListInput inside actions: ', err)
-      });
   };
 }

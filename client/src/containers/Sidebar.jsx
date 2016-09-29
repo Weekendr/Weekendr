@@ -56,7 +56,7 @@ function mapStateToProps(state) {
     quizData: state.quiz.quizData,
     questionIndex: state.quiz.questionIndex,
     quizAnswers: state.quiz.quizAnswers,
-    userInputForm: state.userInput.userInputForm
+    userInputForm: state.userInput.userInputForm,
   };
 }
 

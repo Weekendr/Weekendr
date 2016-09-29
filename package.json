@@ -44,6 +44,7 @@
     "axios": "^0.14.0",
     "babel-loader": "^6.2.5",
     "babel-preset-stage-1": "^6.13.0",
+    "babel-preset-stage-2": "^6.13.0",
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
