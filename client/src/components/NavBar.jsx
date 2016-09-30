@@ -22,6 +22,9 @@ export default class NavBar extends Component {
               <LinkContainer to={{ pathname: '#' }}>
                 <NavItem>Team</NavItem>
               </LinkContainer>
+              <LinkContainer to={{ pathname: '/airbnb' }}>
+                <NavItem>Airbnb</NavItem>
+              </LinkContainer>
             </Nav>
             <Nav pullRight>
               <LinkContainer to={{ pathname: '/profile' }}>

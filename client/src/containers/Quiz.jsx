@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { answerQuestion, postQuestionListInput } from '../actions/quizActions';
+import { fetchAirbnbListings } from '../actions/airbnbActions';
 import QuizOption from '../components/QuizOption';
 
 class Quiz extends Component {
@@ -37,6 +38,11 @@ class Quiz extends Component {
 
   renderQuiz() {
     if (this.props.quizData.length === this.props.questionIndex) {
+      if(this.props.quizAnswers[1].option.option === 'Airbnb') {
+        console.log('*** FETCHING AIRBNB LISTINGS ***');
+        this.props.fetchAirbnbListings(this.props);
+      }
+
       if (this.props.coordinates.latitude && this.props.userInputForm.budget) {
         this.props.postQuestionListInput(this.props);
       }
@@ -84,7 +90,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ answerQuestion, postQuestionListInput }, dispatch);
+  return bindActionCreators({ answerQuestion, postQuestionListInput, fetchAirbnbListings }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quiz);
