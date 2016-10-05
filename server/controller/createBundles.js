@@ -2,21 +2,10 @@ exports.createBundles = (transportation, hotels, activities, userData) => {
   var bundles = []
   var budgetDistribution = {transportation: 0.4, lodging: 0.4, activities: 0.2}
 
-  if(transportation) {
-    var addTransportation = []
-
-    if(!bundles.length)
-      bundles = [[{'transportation': 'None'}]]
-
-    bundles.forEach(bundle => {
-      transportation.tripOption.forEach(transportation => {
-          var bundleCopy = bundle.slice()
-          bundleCopy.push({'transportation': transportation})
-          addTransportation.push(bundleCopy)
+  if(transportation && transportation.tripOption.length) {
+    transportation.tripOption.forEach(transportation => {
+      bundles.push([{'transportation': transportation}])
       })
-    })
-
-    bundles = addTransportation
   }
 
   if(hotels.length > 0) {
@@ -26,18 +15,18 @@ exports.createBundles = (transportation, hotels, activities, userData) => {
 
     bundles.forEach(bundle => {
         hotels.forEach(hotel => {
-              var bundleCopy = bundle.slice()
-              bundleCopy.push({ 'hotel':
-                {name: hotel.name,
-                 address: hotel.address,
-                 city: hotel.city,
-                 hotelStarRating: hotel.hotelStarRating,
-                 hotelGuestRating: hotel.hotelGuestRating,
-                 pic: hotel.thumbnailUrl,
-                 lowRate: hotel.lowRate
-                }
-              })
-              addHotel.push(bundleCopy)
+            var bundleCopy = bundle.slice()
+            bundleCopy.push({ 'hotel':
+              {name: hotel.name,
+               address: hotel.address,
+               city: hotel.city,
+               hotelStarRating: hotel.hotelStarRating,
+               hotelGuestRating: hotel.hotelGuestRating,
+               pic: hotel.thumbnailUrl,
+               lowRate: hotel.lowRate
+              }
+            })
+            addHotel.push(bundleCopy)
         })
       })
 
@@ -102,7 +91,7 @@ exports.createBundles = (transportation, hotels, activities, userData) => {
   }
 
   if(!bundles.length)
-    bundles = [[{'transportation': 'Sorry nothing found'}, {'lodging': 'Sorry nothing found'}, {'activities': 'Sorry nothing found'}]]
+    bundles = [[{'transportation': 'Sorry nothing found'}, {'lodging': 'Sorry nothing found'}, {'activity': 'Sorry nothing found'}]]
 
   if(bundles.length >= 6)
     return bundles.slice(0,6)
