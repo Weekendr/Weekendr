@@ -4,7 +4,7 @@ const handleFourSquareData = module.exports;
 handleFourSquareData.build = (dataArr, selectedCategories) => {
 function buildActivitiesArray(dataArray) {
 const activities = [];
-  for (let i = 0; i < dataArray.length; i++) {
+  for (var i = 0; i < dataArray.length; i++) {
   JSON.parse(dataArray[i]).response.groups[0].items
   .map((item) => {
     return item.venue;

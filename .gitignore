@@ -1,5 +1,6 @@
 /node_modules
 .env
+/client/build
 /client/src/config/googleConfig.js
 /server/model/categoryParse.js
 npm-debug.log
