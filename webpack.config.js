@@ -15,10 +15,6 @@ module.exports = {
       loader: 'babel',
     },
     {
-      exclude: /node_modules/,
-      loader: 'eslint-loader',
-    },
-    {
       test: /\.scss$/,
       loaders: ["style", "css", "sass"],
     },

@@ -9,6 +9,7 @@
   },
   "repository": {
     "type": "git",
+    "postinstall": "webpack"
     "url": "git+https://github.com/Weekendr/Weekendr.git"
   },
   "author": "",
