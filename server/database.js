@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-require('dotenv').config();
+// require('dotenv').config();
 
 var sequelize = new Sequelize('weekendr', process.env.db_username, process.env.db_password, {
   host: 'mysql.kanadachi.com',
