@@ -52381,7 +52381,6 @@
 
 	      lat = positionA.coords.latitude;
 	      long = positionA.coords.longitude;
-	      console.log('geocode api key is ', _googleConfig.geocode_API_KEY);
 	      var GEOCODE_API_KEY = _googleConfig.geocode_API_KEY;
 	      var geocodeUrl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + long + '&key=' + GEOCODE_API_KEY;
 	      _axios2.default.get(geocodeUrl).then(function (geocodeObj) {
