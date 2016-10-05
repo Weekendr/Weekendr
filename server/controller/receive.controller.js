@@ -71,7 +71,7 @@ function receiveCity(req, res) {
   const fourSquarePromises = answers.map((answer) => {
     return fourSquareModel.explore(req.body, answer.option.id);
   });
-  const newPromiseArray = promiseArray //.concat(fourSquarePromises);
+  const newPromiseArray = promiseArray.concat(fourSquarePromises) //.concat(fourSquarePromises);
   const selectedCategoriesArray = req.body.answers.map((answer) => {
     return {
       title: answer.title,
@@ -85,7 +85,8 @@ function receiveCity(req, res) {
   .then((dataArray) => {
     const bundle = [];
     const fourSquareDataArray = dataArray.slice(2);
-    bundle.push(fourSquareModel.parseFourSquareData(fourSquareDataArray, selectedCategoriesArray)); //add country later
+    bundle.push(fourSquareModel.parseFourSquareData(fourSquareDataArray, selectedCategoriesArray));
+    console.log('bundle is: ', bundle)
     const bundles = createBundles.createBundles(dataArray[0], dataArray[1], bundle, req.body)
 
 

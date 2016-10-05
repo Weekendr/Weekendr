@@ -45,7 +45,6 @@ exports.createBundles = (transportation, hotels, activities, userData) => {
     bundles.forEach(bundle => {
       activities.forEach(activity => {
         activity.forEach(act => {
-
           if(act.category === activity1) {
             var bundleCopy = bundle.slice()
             bundleCopy.push({'activity1': {
