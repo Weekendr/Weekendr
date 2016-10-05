@@ -2,6 +2,7 @@ const _ = require('underscore');
 const handleFourSquareData = module.exports;
 
 handleFourSquareData.build = (dataArr, selectedCategories) => {
+  // console.log('data going into handleFourSquareData: ', dataArr)
 function buildActivitiesArray(dataArray) {
 const activities = [];
   for (var i = 0; i < dataArray.length; i++) {
@@ -34,6 +35,7 @@ const activitiesSorted = buildActivitiesArray(dataArr).sort((a, b) => {
   return b.venue_info.rating - a.venue_info.rating;
 });
 
+
 const selectedActivities = selectedCategories.slice(2);
 
 const activitiesBundle = activitiesSorted.reduce((a, b) => {
@@ -52,10 +54,11 @@ const activitiesBundleArray = _.map(activitiesBundle, (val, key) => {
   }
 });
 
+return activitiesBundleArray
 const activitiesFilter = activitiesBundleArray.filter((activity) => {
   return _.some(selectedActivities, (selected) => {
     return (selected.option === activity.category);
   });
 });
-return activitiesFilter
+// return activitiesFilter
 }
